@@ -29,7 +29,7 @@ A multi-step, responsive student registration form built using **HTML**, **Tailw
 
 * HTML5
 * Tailwind CSS (via CDN)
-* Vanilla JavaScript
+* JavaScript
 
 ---
 
