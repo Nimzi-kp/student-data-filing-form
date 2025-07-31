@@ -21,7 +21,7 @@ A multi-step, responsive student registration form built using **HTML**, **Tailw
 ### 🔗 Live Demo
 
 [👉 Click here to test the form ](https://nimzi-kp.github.io/student-data-filing-form/)
-(Test and view console output after submitting)
+> (Test and view console output after submitting)
 
 ---
 
@@ -97,6 +97,6 @@ After submission, click **"NEW FORM"** to reload and start fresh. You'll be prom
 ### 👨‍💻 Author
 
 Made by KP. 
-Feel free to fork or contribute!
+> Feel free to fork or contribute!
 
 --- 
