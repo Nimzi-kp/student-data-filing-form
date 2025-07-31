@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student form</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .main-bg{
+            background: url("bg.png"),linear-gradient(to top, #0250c5, #d43f8d);
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="main-bg w-full h-screen flex flex- items-center justify-center p-5 bg-no-repeat">
+        
+        <div class="md:w-md sm:w-sm w-xs h-130 bg-white rounded-xl md:px-10 px-4 py-6 flex flex-col shrink m-5">
+            <h1 class="text-3xl font-bold text-center py-8">Student's Form</h1>
+
+            <form>
+
+                <div class="sec1 flex flex-col pt-5 gap-y-6 items-center" id="sec1" style="display: flex;">
+                    <h1 class="text-xl w-full sm:px-4 font-semibold flex text-start">Student Name</h1>
+                    <div class="flex flex-col gap-1">
+                        <label for="fname" class="">First name</label>
+                        <input type="text" class="border-2 rounded-md sm:w-xs w-2xs h-10 px-4" name="fname" id="fName" maxlength="25" placeholder="Your First Name">
+                        <p id="fNameError" class="text-xs text-red-500"></p>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                        <label for="sname" class="">Second Name</label>
+                        <input type="text" class="border-2 rounded-md sm:w-xs w-2xs h-10 px-4" name="sname" id="sName" maxlength="25" placeholder="Your Second Name">
+                        <p id="sNameError" class="text-xs text-red-500"></p> 
+                    </div>
+
+                    <div class="flex flex-col">
+                        <button type="button" onclick="toSec2()" class="bg-[#d33f8d] text-white sm:w-xs w-2xs h-10 hover:bg-black">Next</button>
+                    </div>
+                </div>
+
+                <div class="sec2 flex flex-col pt-5 gap-y-6 items-center" id="sec2" style="display: none;">
+                    <h1 class="text-xl w-full sm:px-4 font-semibold flex text-start">Contact Info:</h1>
+                    <div class="flex flex-col gap-1">
+                        <label for="email" class="text-start">Email</label>
+                        <input type="email" class="border-2 rounded-md sm:w-xs w-2xs h-10 px-4" name="email" id="email" maxlength="30" placeholder="Enter Your Email Adress">
+                        <p id="emailError" class="text-xs text-red-500"></p>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                        <label for="phone" class="">Phone no</label>
+                        <input type="tel" class="border-2 rounded-md sm:w-xs w-2xs h-10 px-4" name="phone" id="phone" maxlength="10" placeholder="Enter Your Phone Number"> 
+                        <p id="phoneError" class="text-xs text-red-500"></p>
+                    </div>
+
+                    <div class="flex flex-row gap-2 w-full sm:px-6">
+                        <button type="button" onclick="toSec1()" class="bg-[#d33f8d] text-white w-1/2 h-10 hover:bg-black rounded-md font-semibold">PREVIOUS</button>
+                        <button type="button" onclick="toSec3()" class="bg-[#d33f8d] text-white w-1/2 h-10 hover:bg-black rounded-md font-semibold">NEXT</button>
+                    </div>
+                </div>
+
+                <div class="sec3 flex flex-col pt-5 gap-y-6 items-center" id="sec3" style="display: none;">
+                    <h1 class="text-xl w-full sm:px-4 font-semibold flex text-start">Birth Details:</h1>
+                    <div class="flex flex-col gap-1">
+                        <label for="dob" class="text-start">Date of Birth</label>
+                        <input type="date" class="border-2 rounded-md sm:w-xs w-2xs h-10 px-4" name="dob" id="dob" maxlength="10">
+                        <p id="dobError" class="text-xs text-red-500"></p>
+                    </div>
+
+                    <div class="flex flex-col gap-1 w-full sm:px-6">
+                        <label for="gender" class="text-start mb-2">Gender</label>
+                        
+                        <div class="flex flex-row gap-8">
+                          <label class="flex items-center gap-2">
+                            <input type="radio" name="gender" value="Male" class="accent-pink-500">
+                            Male
+                          </label>
+                          
+                          <label class="flex items-center gap-2">
+                            <input type="radio" name="gender" value="Female" class="accent-pink-500">
+                            Female
+                          </label>
+                          
+                          <label class="flex items-center gap-2">
+                            <input type="radio" name="gender" value="Other" class="accent-pink-500">
+                            Other
+                          </label>
+                        </div>
+                        <p id="genderError" class="text-xs text-red-500"></p>
+                    </div>
+
+                    <div class="flex flex-row gap-2 w-full sm:px-6">
+                        <button type="button" onclick="toSec2()" class="bg-[#d33f8d] text-white w-1/2 h-10 hover:bg-black rounded-md font-semibold">PREVIOUS</button>
+                        <button type="button" onclick="toSec4()" class="bg-[#d33f8d] text-white w-1/2 h-10 hover:bg-black rounded-md font-semibold">NEXT</button>
+                    </div>
+                </div>
+
+                <div class="sec4 flex flex-col pt-5 gap-y-6 items-center" id="sec4" style="display: none;">
+                    <h1 class="text-xl w-full sm:px-4 font-semibold flex text-start">Location:</h1>
+                    <div class="flex flex-col gap-1">
+                        <label for="address" class="text-start">Address</label>
+                        <textarea class="border-2 rounded-md sm:w-xs w-2xs px-4 p-1 resize-none" name="address" id="address" minlength="3" maxlength="250" rows="3" placeholder="Enter Your Adress"></textarea>
+                        <p id="addressError" class="text-xs text-red-500"></p>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                        <label for="Country" class="">Country</label>
+                        <select name="Country" id="Country" class="border-2 rounded-md sm:w-xs w-2xs h-10 px-4" required>
+                            <option value="defult" selected disabled>Select Your Country</option>
+                            <option value="India">INDIA</option>
+                            <option value="US">US</option>
+                            <option value="UK">UK</option>
+                            <option value="Dubai">DUBAI</option>
+                            <option value="Japan">JAPAN</option>
+                            <option value="China">CHINA</option>
+                            <option value="Other">OTHER COUNTRY</option>
+                        </select>
+                        <p id="countryError" class="text-xs text-red-500"></p>
+                    </div>
+
+                    <div class="flex flex-row gap-2 w-full sm:px-6">
+                        <button type="button" onclick="toSec3()" class="bg-[#d33f8d] text-white w-1/2 h-10 hover:bg-black rounded-md font-semibold">PREVIOUS</button>
+                        <button type="button" onclick="toSec5()" class="bg-[#d33f8d] text-white w-1/2 h-10 hover:bg-black rounded-md font-semibold">NEXT</button>
+                    </div>
+                </div>
+
+                <div class="sec5 flex flex-col pt-5 gap-y-6" id="sec5" style="display: none;">
+                    <h1 class="text-xl w-full sm:px-4 font-semibold flex text-start">Skils:</h1>
+                    <div class="flex flex-col gap-1 px-6">
+                    
+                        <div class="flex-row flex gap-2">
+                            <input type="checkbox" id="python" name="python" value="PYTHON">
+                            <label for="python">PYTHON</label>
+                        </div>
+
+                        <div class="flex-row flex gap-2">
+                            <input type="checkbox" id="reactjs" name="reactjs" value="REACT JS">
+                            <label for="reactjs">REACT JS</label>
+                        </div>
+
+                        <div class="flex-row flex gap-2">
+                            <input type="checkbox" id="html" name="html" value="HTML">
+                            <label for="html">HTML</label>
+                        </div>
+
+                        <div class="flex-row flex gap-2">
+                            <input type="checkbox" id="css" name="css" value="CSS">
+                            <label for="css">CSS</label>
+                        </div>
+
+                        <div class="flex-row flex gap-2">
+                            <input type="checkbox" id="javascript" name="javascript" value="JAVA SCRIPT">
+                            <label for="javascript">JAVA SCRIPT</label>
+                        </div>
+
+                        <div class="flex-row flex gap-2">
+                            <input type="checkbox" id="nodejs" name="nodejs" value="NODE.JS">
+                            <label for="nodejs">NODE.JS</label>
+                        </div>
+
+                        <div class="flex-row flex gap-2">
+                            <input type="checkbox" id="mongodb" name="mongodb" value="MONGO DB">
+                            <label for="mongodb">MONGO DB</label>
+                        </div>
+                        <p id="skilsError" class="text-xs text-red-500"></p>
+
+                    </div>
+
+
+                    <div class="flex flex-row gap-2 w-full sm:px-6">
+                        <button type="button" onclick="toSec4()" class="bg-[#d33f8d] text-white w-1/2 h-10 hover:bg-black rounded-md font-semibold">PREVIOUS</button>
+                        <button type="button" onclick="Submit()" class="bg-[#d33f8d] text-white w-1/2 h-10 hover:bg-black rounded-md font-semibold">SUBMIT</button>
+                    </div>
+                </div>
+
+                <div class="sec6 flex flex-col pt-5 gap-y-6 items-center" id="sec6" style="display: none;">
+                    <h1 class="text-xl w-full font-semibold flex text-center justify-center text-green-600">information saved success fully</h1>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-yellow-600">Check Console for Student Details</p>
+                    </div>
+
+                    <div class="flex flex-col gap-1">
+                        <p class="text-center">Thank you</p>
+                    </div>
+                        
+                    <div class="flex flex-row gap-2 w-full px-6">
+                        <button type="button" onclick="reload()" class="bg-[#d33f8d] text-white sm:w-xs w-2xs h-10 hover:bg-black">NEW FORM</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>  
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
